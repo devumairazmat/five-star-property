@@ -1,11 +1,14 @@
-import './App.css';
-import Development from "./pages/development/Development"
+import React from 'react';
+// import UnderConstruction from './components/UnderConstruction';
+import Router from './Router'
 
 function App() {
+
   return (
-    <>
-    <Development />
-    </>
+    <div className="App">
+      <Router />
+      {/* <UnderConstruction /> */}
+    </div>
   );
 }
 

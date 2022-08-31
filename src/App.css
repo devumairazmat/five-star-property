@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+
+:root {
+    --theme-color: #00ba74;
+    --accent-color: #252c41;
+    --theme-light: #e1fff3;
+    --ant-primary-color: #00ba74;
+    --antd-wave-shadow-color: #00ba74;
+}
+body {
+    height: 100vh auto;
+}
+#root {
+    height: 100vh auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.markup a {
+    color: rgb(131, 137, 255) !important;
+    font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h4,h5,h6 {
+    font-weight: 400 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html,
+body,
+#root,
+.mm-page,
+.gray-bg {
+    /* background-color: #f7f9fc !important; */
+    /* background-color: #f7f7f7 !important; */
+    /* background-image: url(./assets/img/pattern.png) !important; */
+    /* background-position: center; */
+    background-size: 100%;
+    /* background-attachment: fixed; */
+    background-repeat: repeat;
+    /* height: 100vh auto; */
+}
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+.border-accent {
+    border-color: var(--accent-color) !important;
+}
+.bg-theme {
+    background-color: var(--theme-color) !important;
+}
+.bg-theme-light {
+    background-color: var(--theme-light) !important;
+}
+.bg-them-light {
+    color: var(--theme-light) !important;
+}
+/* .form-control {
+    background-color: #f7f7f7 !important;
+    height: 45px !important;
+} */
+
+.text-theme {
+    color: var(--theme-color) !important;
+}
+.text-accent {
+    color: var(--accent-color) !important;
+}
+.rounded {
+    border-radius: 10px !important;
+}
+.shadow {
+    box-shadow: -7px 10px 43px -7px rgba(176, 192, 180, 0.75);
+    -webkit-box-shadow: -7px 10px 43px -7px rgba(176, 192, 180, 0.75);
+    -moz-box-shadow: -7px 10px 43px -7px rgba(176, 192, 180, 0.75);
+}
+.ant-slider-track {
+    background-color: #00ba74 !important;
+}
+.text-shadow {
+    text-shadow: 4px 9px 15px #110805 !important;
+}
+.link {
+    cursor: pointer !important;
 }
 
-.App-link {
-  color: #61dafb;
+.ant-notification {
+    z-index: 100 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu div {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.profile-content {
+    overflow-y: scroll !important;
+    height: 70vh !important;
+}
+.line-through {
+    text-decoration: line-through !important;
+}
+.mobile-only {
+    visibility: collapse !important;
+}
+.desktop-only {
+    visibility: visible !important;
+}
+
+.border-gray {
+    border: 1px solid #cac8c8 !important;
+}
+.bg-danger {
+    background-color: rgb(255, 79, 79) !important;
+}
+svg {
+    margin: 0 !important;
+    display: initial !important;
+}
+.bg-gray {
+    background-color: #f7f7f7 !important;
+}
+.inbox_chatting_box .chatting_content li.media .media-body p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.ant-radio-button-wrapper-checked {
+    color: white !important;
+    background-color: var(--theme-color) !important;
+    border-color: var(--theme-color) !important;
+}
+/* .modal {
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+}
+.modal-content, .modal-body {
+    border-radius: 15px !important;
+} */
+@media only screen and (max-width: 1199px) {
+    .mobile-only {
+        visibility: visible !important;
+    }
+    .desktop-only {
+        visibility: collapse !important;
+        display: none;
+    }
+}
+.ant-tabs-nav-wrap {
+    background-color: white !important;
+    padding: 10px;
+    border-radius: 8px;
+    /* width: 100% !important; */
 }
