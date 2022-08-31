@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
+=======
+# five-star-property
+# Getting Started with five-star-property React App
+>>>>>>> 503e7f8549ba382419925e0a666f3525c0e3b5f9
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
