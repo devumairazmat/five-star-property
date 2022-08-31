@@ -30,11 +30,11 @@ const Contact = () => {
                             Mauris orci donec blandit maecenas. Orci lorem purus porttitor massa consectetur. Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue justo. Nibh laoreet
                             volutpat quis velit. Blandit aliquam donec sed morbi congue eget lorem viverra porta id lobortis.
                         </p>
-                        <a href={apiWhatsappLink} className="btn btn-lg btn-primary shadow-sm d-none d-lg-inline-block" target="_blank" rel="noreferrer">
+                        <a href="https://wa.me/message/BPOLGRDUPQKWG1" className="btn btn-lg btn-primary shadow-sm d-none d-lg-inline-block" target="_blank" rel="noreferrer">
                             <WhatsappIcon />
                             <span className="mx-2">Get In Touch</span>
                         </a>
-                        <a href={apiWhatsappLink} className="btn btn-primary shadow-sm d-lg-none" target="_blank" rel="noreferrer">
+                        <a href="https://wa.me/message/BPOLGRDUPQKWG1" className="btn btn-primary shadow-sm d-lg-none" target="_blank" rel="noreferrer">
                             <WhatsappIcon />
                             <span className="mx-2">Get In Touch</span>
                         </a>
