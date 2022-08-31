@@ -1,114 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" class="  sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers">
+<html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-P6DC9L6');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
-
-    <!-- =============  SSR WITH EXPRESS ========== -->
-    <!-- <title>Sheruta</title>
-    <meta name="description" content="__META_DESCRIPTION__"/>
-    <meta name="og:title" content="__META_OG_TITLE__"/>
-    <meta name="og:description" content="__META_OG_DESCRIPTION__"/>
-    <meta property="og:image" content="__META_OG_IMAGE__" /> -->
-    
-    <!-- OLD ONE 👇🏽👇🏽 -->
-    <title id='site-title'>Shared Flat, Apartments For Rent In Lagos, Ikeja, Lekki, Surulere, Okota, Yaba, Oshodi | Sheruta
-      NG </title>
-    <meta name="description" content="Flatmate Finder - Find shared Apartments and roommates to match with.">
-    <meta name="og:title" content="Sheruta Apartment Sharing"/>
-    <meta name="og:description" content="Share a flat in Lagos, Abuja, Port Harcourt, Ibadan, etc. Signup and get match with a flat a mate today."/>
-    <meta property="og:image" content="./logos/icon-192x192.png" />
-    
-    <!-- =============  SSR WITH EXPRESS ========== -->
-
-    <link rel="icon" href="./logos/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#00ba74" />
-     <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Sheruta">
-       <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Sheruta">
-    <!-- Homescreen icons -->
-    <link rel="apple-touch-icon" href="./logos/logo.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./logos/logo.png">
-    <link rel="apple-touch-icon" sizes="96x96" href="./logos/logo.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./logos/logo.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="./logos/logo.png">
-        <!-- Default twitter cards -->
-    <meta name="twitter:card" content="Share a flat today in Lagos, Abuja, Port Harcourt, Ibadan, etc. Signup and get match with a flat a mate today.">
-    <meta name="twitter:site" content="@sheruta_ng">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Sheruta">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    
-    <meta name="author" content="Sheruta NG">
-    <meta name="keywords"
-      content="shared, roommate, apartment, flat, room, Lagos, Abuja, Port Harcourt, Ibadan, for rent, mini flat, roommate, self contain, request, apartment request, free, agents, housing, property for sale in ikeja, property for sale in lekki, property for sale in ajah, property for sale in surulere, property for sale in maryland, property for sale in yaba, property for sale in victoria island, property for sale in ojota, property for sale in mende, property for sale in ojodu, property for sale in ogudu, property for sale in anthony village, property for sale in lagos, house for sale in surulere, house for sale in lekki, house for sale in ikeja, house for sale in yaba, real estate agent in lagos, house for sale in ikoyi, house for sale in ojota, house for sale shomolu, house for sale in ketu, house for sale in lagos, real estate in nigeria, flat for sale in lagos, land for sale in lagos, duplex for sale in lagos, office space for sale in lagos, house for sale in berger, nigeria property website, duplex for sale in lagos, house for sale in banana island, real estate agents in lagos, house for sale in nigeria">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/vendor.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/responsive.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="Real Estate Website" content="Real Estate Website" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   
-    
+
+    <title>My Real Estate</title>
   </head>
-  <body id="body-tag" class="bgc-f7 color-theme-blue mont-font loaded ">
-  <!-- <body class="bgc-f7 color-theme-blue mont-font loaded theme-dark"> -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div style="display: flex; justify-content: center; margin-top: 40vh;">
-        <div style="text-align: center;">
-          <h1>Sheruta</h1>
-          <h6>Please Wait...</h6>
+  <body>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <div id="root"></div>
+    <div class="body-overlay" id="body-overlay"></div>
+    <div class="td-search-popup" id="td-search-popup">
+      <form action="index.html" class="search-form">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search....." />
         </div>
-      </div>
+        <button type="submit" class="submit-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
     </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="back-to-top">
+      <span class="back-top"><i class="fa fa-angle-up"></i></span>
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <!--Start of Tawk.to Script-->
-    <!-- <script type="text/javascript">
-      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/5da4cdd4fbec0f2fe3b9b38b/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script> -->
-    <!--End of Tawk.to Script-->
+    <!-- all plugins here -->
+    <script src="%PUBLIC_URL%/assets/js/vendor.js"></script>
   </body>
-  <script
-						src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-						integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-						crossorigin="anonymous"
-					></script>
-            <script src="bower_components/aos/dist/aos.js"></script> 
 </html>
