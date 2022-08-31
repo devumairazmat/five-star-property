@@ -1,0 +1,14 @@
+section#offer {
+    position: relative;
+    padding: 150px 0;
+}
+
+section#offer .overlay-img {
+    position: absolute;
+    bottom: 0;
+    max-width: 120px;
+}
+
+.offer-icon {
+    margin-bottom: 30px;
+}

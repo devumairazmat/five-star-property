@@ -1,0 +1,12 @@
+section#contact {
+    padding: 150px 0;
+    background-size: cover;
+}
+
+section#contact .heading {
+    line-height: 2.6rem;
+}
+
+section#contact p {
+    line-height: 1.7rem;
+}

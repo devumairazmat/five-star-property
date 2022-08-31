@@ -1,0 +1,28 @@
+section#property {
+    padding: 120px 0;
+}
+
+.residence-thumbnails {
+    position: relative;
+}
+
+.residence-thumbs {
+    position: absolute;
+    width: 400px;
+    bottom: -50px;
+    background-color: var(--transparent-color);
+    backdrop-filter: blur(15px);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.residence-thumbs img {
+    border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+    .residence-thumbs {
+        width: 300px;
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,18 @@
+.social-media-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+}
+
+.social-media-icon:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+    opacity: 1;
+}
