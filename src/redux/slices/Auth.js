@@ -72,6 +72,7 @@ const Auth = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // For Register
       .addCase(register.pending, (state, action) => {
         toast.loading("signing up ..");
       })
@@ -81,6 +82,33 @@ const Auth = createSlice({
         state.user = action.payload;
       })
       .addCase(register.rejected, (state, action) => {
+        toast.dismiss();
+        toast.error("error: " + action.payload);
+      })
+      // For Login
+      .addCase(login.pending, (state, action) => {
+        toast.loading("logging in ..");
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        toast.dismiss();
+        toast.success("successfully logged in ..");
+        state.user = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
+        toast.dismiss();
+        toast.error("error: " + action.payload);
+      })
+      // For Logout
+      .addCase(logout.pending, (state, action) => {
+        toast.loading("logging out ..");
+      })
+      .addCase(logout.fulfilled, (state, action) => {
+        toast.dismiss();
+        toast.success("successfully logged out ..");
+        state.user = null;
+      })
+      .addCase(logout.rejected, (state, action) => {
+        toast.dismiss();
         toast.error("error: " + action.payload);
       });
   },
