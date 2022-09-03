@@ -87,6 +87,12 @@ const Navbar = () => {
                   <span className="badge badge-pill badge-primary">2</span>
                 </Link>
                 <Link
+                  to="/property-form"
+                  className="btn btn-user btn-primary shadow-sm mt-3 mt-md-0 ml-md-5"
+                >
+                  Submit Property
+                </Link>
+                <Link
                   to="/dashboard"
                   className="btn btn-user btn-primary shadow-sm mt-3 mt-md-0 ml-md-5"
                 >
