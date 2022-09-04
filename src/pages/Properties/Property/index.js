@@ -1,5 +1,6 @@
 // React
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {
   ArchiveFill,
@@ -10,6 +11,7 @@ import {
   PlusSquareDotted,
 } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLocation } from "react-router-dom";
 
 // Layouts
 import BaseLayout from "../../../layouts/BaseLayout";
@@ -34,10 +36,32 @@ import "./index.css";
 
 const Property = () => {
   const navigate = useNavigate();
-
+  const [property, setProperty] = useState([]);
+  const id = useLocation().state;
   const handleAddToCart = () => {
     navigate("/carts");
   };
+  const apiUrl = process.env.REACT_APP_API_URL + "api/properties/get";
+
+  useEffect(() => {
+    const unsub = async () => {
+      try {
+        const res = await axios.post(apiUrl, {
+          find: { _id: id },
+          limit: "1",
+        });
+        if (res.status === 200) {
+          setProperty(res.data.properties[0]);
+        } else {
+          console.log(res.data);
+        }
+        console.log(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    unsub();
+  }, [id]);
 
   return (
     <BaseLayout title="Property">
@@ -62,71 +86,16 @@ const Property = () => {
                   data-src={Residence1IMG}
                 />
                 <div className="residence-thumbs">
-                  <Swiper spaceBetween={10} slidesPerView={3}>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence1IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence1IMG}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence2IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence2IMG}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence3IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence3IMG}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence1IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence1IMG}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence2IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence2IMG}
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img
-                        className="img-fluid"
-                        src={Residence3IMG}
-                        alt="residence"
-                        data-fancybox="residence-thumb"
-                        data-src={Residence3IMG}
-                      />
-                    </SwiperSlide>
-                  </Swiper>
+                  <img src={property.image} width={500} height={350} alt="" />
                 </div>
               </div>
             </Fancybox>
             <div className="col-lg-6 mt-5 pt-3 mt-lg-0">
               <div className="card card-user">
                 <div className="card-body card-user">
-                  <h5 className="card-title card-user">Aliva Priva Jalvin</h5>
+                  <h5 className="card-title card-user">{property.title}</h5>
                   <h6 className="card-subtitle card-user">
-                    1087 Pin Oak Drive, Clinton, USA
+                    {property.location}
                   </h6>
                   <div
                     className="d-flex mt-4"
@@ -138,15 +107,15 @@ const Property = () => {
                   >
                     <div className="bed-icon">
                       <DisplayportFill />
-                      <span className="ml-2">4 Beds</span>
+                      <span className="ml-2">{property.beds} Beds</span>
                     </div>
                     <div className="bath-icon">
                       <ArchiveFill />
-                      <span className="ml-2">2 Bath</span>
+                      <span className="ml-2">{property.baths} Bath</span>
                     </div>
                     <div className="square-icon">
                       <PlusSquareDotted />
-                      <span className="ml-2">1203 m2</span>
+                      <span className="ml-2">{property.area} m2</span>
                     </div>
                   </div>
                   <div
@@ -214,12 +183,7 @@ const Property = () => {
                   role="tabpanel"
                   aria-labelledby="pills-description-tab"
                 >
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                    laboriosam tempora assumenda, dolor rerum ad magnam
-                    voluptatibus incidunt iusto, omnis amet enim sed porro
-                    itaque autem obcaecati necessitatibus minus fuga.
-                  </p>
+                  <p>{property.description}</p>
                 </div>
                 <div
                   className="tab-pane fade"

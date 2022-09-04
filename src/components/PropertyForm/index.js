@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/slices/Auth";
+import { addProperty } from "../../redux/slices/Property";
 
 // Layouts
 import BaseLayout from "../../layouts/BaseLayout/index";
@@ -12,15 +12,16 @@ import { baseApiUrl } from "../../utils/fetchApi";
 
 const PropertyForm = () => {
   const dispatch = useDispatch();
+  const [photo, setPhoto] = useState();
   const [propertyData, setpropertyData] = useState({
-    img: "",
+    location: "",
     title: "",
+    description: "",
     status: "",
     price: "",
     area: "",
     beds: "",
     baths: "",
-    garages: "",
   });
   console.log(propertyData);
   const navigate = useNavigate();
@@ -32,13 +33,27 @@ const PropertyForm = () => {
     });
   };
 
+  const submit = () => {
+    dispatch(
+      addProperty({
+        propertyData,
+        photo,
+      })
+    );
+  };
+
   return (
     <BaseLayout title="Register">
       <div className="container mt-4 mb-4 p-4">
         <div className="card card-user">
           <div className="card-body card-user p-4">
             <h1>Add Property Data To Submit</h1>
-            <form method="POST" onSubmit="">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                submit();
+              }}
+            >
               {/* Image*/}
               <div className="form-group">
                 <label htmlFor="image" className="form-label">
@@ -49,8 +64,7 @@ const PropertyForm = () => {
                   className="form-control"
                   id="image"
                   name="img"
-                  value={propertyData.img}
-                  onChange={handleChange}
+                  onChange={(e) => setPhoto(e.target.files[0])}
                   placeholder="img.."
                   alt="Submit"
                   width="48"
@@ -71,6 +85,38 @@ const PropertyForm = () => {
                   value={propertyData.title}
                   onChange={handleChange}
                   placeholder="Title....."
+                  required
+                />
+              </div>
+              {/* Location */}
+              <div className="form-group">
+                <label htmlFor="location" className="form-label">
+                  Location
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="location"
+                  name="location"
+                  value={propertyData.location}
+                  onChange={handleChange}
+                  placeholder="Location....."
+                  required
+                />
+              </div>
+              {/* description */}
+              <div className="form-group">
+                <label htmlFor="description" className="form-label">
+                  Description
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="description"
+                  name="description"
+                  value={propertyData.description}
+                  onChange={handleChange}
+                  placeholder="Description....."
                   required
                 />
               </div>
@@ -154,22 +200,7 @@ const PropertyForm = () => {
                   required
                 />
               </div>
-              {/* garages */}
-              <div className="form-group">
-                <label htmlFor="garages" className="form-label">
-                  Garages
-                </label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="garages"
-                  name="garages"
-                  value={propertyData.garages}
-                  onChange={handleChange}
-                  placeholder="garages..."
-                  required
-                />
-              </div>
+
               <button type="submit" className="btn btn-block btn-primary mt-5">
                 Submit Property
               </button>

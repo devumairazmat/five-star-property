@@ -54,13 +54,14 @@ const Navbar = () => {
             >
               Home
             </Link>
+
             <Link
               to="/properties"
               className={`nav-link ${
                 location.pathname.includes("/properties") ? "active" : ""
               }`}
             >
-              Properties
+              List
             </Link>
             {!user ? (
               <>
@@ -88,7 +89,9 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/property-form"
-                  className="btn btn-user btn-primary shadow-sm mt-3 mt-md-0 ml-md-5"
+                  className={`nav-link ${
+                    location.pathname.includes("/properties") ? "active" : ""
+                  }`}
                 >
                   Submit Property
                 </Link>
